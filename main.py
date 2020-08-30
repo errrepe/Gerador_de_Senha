@@ -1,6 +1,6 @@
-# Evitar caracteres repetidos
-# Numero minimo de dígitos
-# Numero mínimo de caracteres especiais
+# TODO: Evitar caracteres repetidos
+# TODO: Numero minimo de dígitos
+
 
 def pergunta_usuario():
     resp = input('Digite [S] para sim e [N] para não\n').upper()
@@ -59,7 +59,7 @@ def gera_senha():
             senha_gerada += punctuation[seed2]
         i += 1
 
-        if len(senha_gerada) == numero_de_caracteres:   #FIXME: O programa confere mas não funciona, em algum momento ele simplesmente sai do loop do while
+        if i == numero_de_caracteres:   #FIXME: O programa confere mas não funciona, em algum momento ele simplesmente sai do loop do while
             for n in range(0, len(senha_gerada)):
                 if senha_gerada[n] in punctuation:
                     contador_carac_especiais += 1

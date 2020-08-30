@@ -59,7 +59,7 @@ def gera_senha():
             senha_gerada += punctuation[seed2]
         i += 1
 
-        if i == numero_de_caracteres:   #FIXME: O programa confere mas não funciona, em algum momento ele simplesmente sai do loop do while
+        if i == numero_de_caracteres:
             for n in range(0, len(senha_gerada)):
                 if senha_gerada[n] in punctuation:
                     contador_carac_especiais += 1

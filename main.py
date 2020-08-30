@@ -1,16 +1,32 @@
-# This is a sample Python script.
+def gera_senha():
+    import random
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+    ascii_lowercase = 'abcdefghijklmnopqrstuvwxyz' # 26 caracteres
+    ascii_uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' # 26 caracteres
+    digits = '0123456789'# 10 caracteres
+    punctuation = r"""!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~""" # 32 caracteres
+
+    numero_de_caracteres = 6
+    i = 0
+    senha_gerada = ""
+    while i < numero_de_caracteres:
+        seed = random.randint(0,100)
+        if seed % 2:
+            seed2 = random.randint(0, len(ascii_lowercase)-1)
+            senha_gerada += ascii_lowercase[seed2]
+        elif seed % 3:
+            seed2 = random.randint(0, len(ascii_uppercase)-1)
+            senha_gerada += ascii_uppercase[seed2]
+        elif seed % 5:
+            seed2 = random.randint(0, len(digits)-1)
+            senha_gerada += digits[seed2]
+        elif seed % 7:
+            seed2 = random.randint(0, len(punctuation)-1)
+            senha_gerada += punctuation[seed2]
+        i += 1
+    return senha_gerada
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print(gera_senha())
